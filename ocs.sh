@@ -30,19 +30,6 @@ cd
 
 MYIP=$(wget -qO- ipv4.icanhazip.com);
 
-# check registered ip
-wget -q -O daftarip http://www.imadenews.com/daftarip.txt
-if ! grep -w -q $MYIP daftarip; then
-	echo "Maaf, hanya IP yang terdaftar yang bisa menggunakan script ini!"
-	if [[ $vps = "FNS" ]]; then
-		echo "Hubungi: suryadewa bangsat(http://www.fornesia.com - 08563776008)"
-	else
-		echo "Hubungi: suryadewa (http://www.imadenews.com/contact/ - 08563776008)"
-	fi
-	rm -f /root/daftarip
-	exit
-fi
-
 #https://github.com/adenvt/OcsPanels/wiki/tutor-debian
 
 clear
